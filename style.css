@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+html, body, * {
+    scrollbar-width: none;       
+    -ms-overflow-style: none;    
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar {
+    display: none;
+}
+:root {
+    --conecolor:#fde69d;
+    --blueberry:#b875ff;
+    --berry:#87cefa;
+}
+body {
+    background-color: var(--conecolor);
+}
+header, nav{
+    height: 70px;
+    background-color: var(--blueberry);
+    position: relative;
+    width: 100%;
+}
+
+
+nav,
+nav ul {
+    display: flex;
+    align-items: center;
+}
+nav ul button a li{
+    padding: 0px 30px;
+    list-style: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+nav ul button a{
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.5s cubic-bezier(0.55, 0.055, 0.675, 0.675);
+}
+nav ul button {
+    font-size: 19px;
+    font-weight: bolder;
+    padding: 5px 5px;
+    margin: 0px 30px;
+    border: none;
+    background-color: var(--berry);
+    border-radius: 20px;
+    /* text-shadow: #000000 0px 0px 3px; */
+    
+}
+nav ul button a:hover{
+    color: #000000;
+}
+nav ul button:hover {
+    background-color: #fff;
+    transition: background-color 0.5s cubic-bezier(0.55, 0.055, 0.675, 0.675);
+}
+nav a img {
+    position: absolute;
+    right: 0%;
+    left: auto;
+    width: 107px;
+    height: 50px;
+    padding-right: 30px;
+    transform: translateY(-26px);
+}
+nav a img:hover {
+    animation: Spin 1s linear infinite;
+}
+
+/* HERO SECTION */
+.main {
+    min-height: calc(100vh - 120px);
+    width: 100%;
+    position: relative;
+    justify-items: center;
+}
+.main .hero{
+    padding-top: 70px;
+    width: 50vw;
+    justify-items: center;
+    align-content: center;
+    text-align: center;
+}
+.main .hero h1{
+    padding-bottom: 20px;
+}
+.main .hero p{
+    padding-bottom: 10px;
+}
+.main .hero p.p1{
+    font-size: 16px;
+    font-weight: 400;
+}
+.main .hero p.p2{
+    font-size: 14px;
+    font-weight: 350;
+}
+.main .hero p.p3{
+    font-size: 12px;
+    font-weight: 300;
+}
+.box {
+    height: 100px;
+            width: 100px;
+            background: url(/111425128.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            border-radius: 70px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            animation: AnimateX 5s linear infinite,
+                        AnimateY 1s ease-out infinite alternate,
+                        Spin 1.5s linear infinite;
+}
+
+@keyframes AnimateX {
+          from {
+            left: 0;
+          }
+          to {
+            left: 100%;
+          }
+
+}
+@keyframes AnimateY {
+          from {
+            bottom: 0;
+          }
+          to {
+            bottom: 30%;
+          }
+
+}
+@keyframes Spin {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+.footer {
+    width: 100vw;
+    height: auto;
+    background-color: var(--blueberry);
+    color: #fff;
+    text-align: center;
+}
+.footer a h1{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+}
+.footer a h1 svg{
+    width: 23px;
+}
+.footer a{
+    text-decoration: none;
+    color: #fff;
+}
+.footer a img{
+    width: 50px;
+    padding: 10px 40px;
+}
+.projects{
+    width: min(1200px, 90%);
+    margin: 50px auto;
+    
+    display: grid;
+
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(320px, 1fr)
+    );
+
+    gap: 2rem;
+}
+
+.card{
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,.15);
+
+    transition: .3s ease;
+}
+
+.card:hover{
+    transform: translateY(-10px);
+}
+
+.card img{
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.card-content{
+    padding: 1.5rem;
+}
+
+.card-content h2{
+    margin-bottom: .75rem;
+}
+
+.card-content p{
+    margin-bottom: 1.25rem;
+    color: #555;
+}
+
+.btn{
+    display: inline-block;
+    padding: 10px 20px;
+    background: var(--blueberry);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+}
