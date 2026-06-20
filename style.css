@@ -231,3 +231,13 @@ nav a img:hover {
     text-decoration: none;
     border-radius: 8px;
 }
+
+svg.js-svg {
+    transform: translateY(-9px);
+}
+.langs {
+    padding-bottom: 200px;
+}
+.lng-icons a svg:hover {
+    filter: drop-shadow(0px 0px 5px black);
+}
