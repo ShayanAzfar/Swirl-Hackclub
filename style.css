@@ -2,7 +2,7 @@
 *{
     padding: 0;
     margin: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Martel Sans', sans-serif;
 }
 html, body, * {
     scrollbar-width: none;       
@@ -15,16 +15,16 @@ body::-webkit-scrollbar,
     display: none;
 }
 :root {
-    --conecolor:#fde69d;
-    --blueberry:#b875ff;
-    --berry:#87cefa;
+    --raseberry:#ffd2ec;
+    --sky:#79addc;
+    --berry:#ffc09f;
 }
 body {
-    background-color: var(--conecolor);
+    background-color: var(--raseberry);
 }
 header, nav{
     height: 70px;
-    background-color: var(--blueberry);
+    background-color: var(--sky);
     position: relative;
     width: 100%;
 }
@@ -34,6 +34,10 @@ nav,
 nav ul {
     display: flex;
     align-items: center;
+    justify-content: center;
+}
+.menu-checkbox, .menu-icon {
+    display: none;
 }
 nav ul button a li{
     padding: 0px 30px;
@@ -50,33 +54,69 @@ nav ul button {
     font-size: 19px;
     font-weight: bolder;
     padding: 5px 5px;
-    margin: 0px 30px;
+    margin: 0px 15px;
     border: none;
     background-color: var(--berry);
-    border-radius: 20px;
+    border-radius: 5px;
     /* text-shadow: #000000 0px 0px 3px; */
     
 }
 nav ul button a:hover{
-    color: #000000;
+    color: var(--sky);
+    transition: color 0.5s ease;
 }
 nav ul button:hover {
-    background-color: #fff;
-    transition: background-color 0.5s cubic-bezier(0.55, 0.055, 0.675, 0.675);
+    background-color: var(--raseberry);
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.486);
+    transition: all 0.5s ease-in-out;
 }
-nav a img {
-    position: absolute;
-    right: 0%;
-    left: auto;
-    width: 107px;
-    height: 50px;
-    padding-right: 30px;
-    transform: translateY(-26px);
+@media screen and (max-width: 768px) {
+    nav {
+        justify-content: space-between;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+    .menu-icon {
+        display: block !important;
+        font-size: 28px;
+        color: white;
+        cursor: pointer;
+        line-height: 70px;
+    }
+.nav-links{
+        display: none !important; 
+        flex-direction: column;
+        position: absolute;
+        top:70px;
+        left: 0;
+        width: 100%;
+        background-color: var(--sky);
+        padding: 20px 0;
+        z-index: 10;
+    }
+    nav ul {
+        flex-direction: column !important;
+        width: 100%;
+    }
+    nav ul button {
+        margin: 10px 0px;
+        width: 80%;
+        text-align: center;
+        box-sizing: border-box;
+    }
+    nav ul button a {
+        display: block;
+        width:100%;
+    }
+    nav ul button a li{
+        padding: 10px 0px;
+        text-align: center;
+    }
+    .menu-checkbox:checked ~ .nav-links {
+        display: flex !important;
+        align-items: center;
+    }
 }
-nav a img:hover {
-    animation: Spin 1s linear infinite;
-}
-
 /* HERO SECTION */
 .main {
     min-height: calc(100vh - 120px);
@@ -93,6 +133,23 @@ nav a img:hover {
 }
 .main .hero h1{
     padding-bottom: 20px;
+    color: var(--sky);
+    font-family: 'Martel Sans', sans-serif, monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 16ch;
+    height: 30px;
+    animation: typo 2s steps(15) infinite alternate;
+
+}
+@keyframes typo {
+    from {
+        width: 0;
+    }
+    to {
+        width: 16ch;
+    }
+    
 }
 .main .hero p{
     padding-bottom: 10px;
@@ -124,7 +181,18 @@ nav a img:hover {
                         AnimateY 1s ease-out infinite alternate,
                         Spin 1.5s linear infinite;
 }
-
+.box h1{
+    color: var(--sky);
+    animation: rainbow 0.5s infinite alternate;
+}
+@keyframes rainbow {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
 @keyframes AnimateX {
           from {
             left: 0;
@@ -154,7 +222,7 @@ nav a img:hover {
 .footer {
     width: 100vw;
     height: auto;
-    background-color: var(--blueberry);
+    background-color: var(--sky);
     color: #fff;
     text-align: center;
 }
@@ -175,6 +243,10 @@ nav a img:hover {
 .footer a img{
     width: 50px;
     padding: 10px 40px;
+}
+.footer a img:hover {
+    filter: brightness(0) saturate(100%) invert(84%) sepia(43%) saturate(1210%) hue-rotate(305deg) brightness(110%) contrast(101%);
+    transition: filter 0.5s ease;
 }
 .projects{
     width: min(1200px, 90%);
@@ -226,10 +298,15 @@ nav a img:hover {
 .btn{
     display: inline-block;
     padding: 10px 20px;
-    background: var(--blueberry);
+    background:var(--sky);
     color: white;
     text-decoration: none;
     border-radius: 8px;
+}
+.btn:hover{
+    background: var(--raseberry);
+    color: #000;
+    transition: all 0.5s ease-in-out;
 }
 
 svg.js-svg {
